@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
+  --bg-canvas: #F4F3EE;
+  --color-forest: #143323;
+  --color-lime: #D0EA87;
+  --color-lime-soft: #D4EAA2;
+  --color-badge: #CEE795;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F4F3EE;
+  color: #14281D;
+  font-family: var(--font-sans);
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+
+  --color-brand-forest: #143323;
+  --color-brand-forest-dark: #0D2218;
+  --color-brand-forest-light: #1C412E;
+  --color-brand-lime: #D0EA87;
+  --color-brand-lime-hover: #C2E073;
+  --color-brand-lime-light: #E7F3D0;
+  --color-brand-badge: #CEE795;
+  --color-brand-cream: #F4F3EE;
+  --color-brand-muted: #55685A;
+  --color-brand-border: #E2E6DA;
+
+  --color-team-sage: #D8E6D3;
+  --color-team-olive: #DEE8BC;
+  --color-team-cream: #F1EBD6;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.bg-canvas {
+  background-color: #F4F3EE;
 }
